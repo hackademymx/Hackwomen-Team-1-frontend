@@ -13,7 +13,7 @@ export const DivPlaces = styled("div")({
 
 export const DivTitle = styled(Typography)({
   color: "whitesmoke",
-  margin: "0",
+  margin: "0 auto",
   padding: "20px",
   backgroundColor: "#735d78",
 });

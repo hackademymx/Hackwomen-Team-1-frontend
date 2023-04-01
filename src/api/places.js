@@ -13,4 +13,15 @@ export const getPlaces = async () => {
   }
 };
 
+export const getPlace = async (id) => {
+  try {
+    const url = `${API_URL}/places/${id}`;
+    const { data, status } = await axios.get(url);
+    return { data, status };
+  } catch (error) {
+    const { data, status } = error.response;
+    return { data, status };
+  }
+};
+
 export const addPlace = async () => {};

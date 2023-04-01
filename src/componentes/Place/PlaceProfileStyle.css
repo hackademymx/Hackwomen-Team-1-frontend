@@ -1,0 +1,50 @@
+*{
+  box-sizing: border-box;
+}
+.place{
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+}
+
+.placeImage {
+  margin-top: 15px;
+  width: 40%;
+}
+
+.placeImage img{
+  object-fit: fill;
+  height: 300px;
+  width: 100%;
+  border-radius: 15px;
+}
+
+h2, h4{
+  margin: 0 auto 35px 0;
+  text-align: start;
+}
+.placeInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+button{
+  border: 0;
+  text-decoration: underline;
+}
+
+.encabezado{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.placeDescription{
+  margin: 25px 50px 20px 50px;
+  text-align: justify;
+}
