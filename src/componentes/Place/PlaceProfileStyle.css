@@ -2,9 +2,8 @@
   box-sizing: border-box;
 }
 .place{
-  margin: 0 auto;
-  max-width: 1200px;
-  min-height: 100vh;
+  margin: 0 auto 50px auto;
+  width: 80%;
 }
 
 .placeImage {

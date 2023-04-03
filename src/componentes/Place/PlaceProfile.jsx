@@ -17,14 +17,11 @@ export default function PlaceProfile({ place }) {
             {place.address_city}, {place.address_state} -{place.address_zipcode}
           </h4>
           <button type="button">Editar Lugar</button>
-          <button type="button">Eliminar Lugar</button>
+          <button type="button" >Eliminar Lugar</button>
         </div>
       </div>
 
       <div className="placeDescription">{place.description}</div>
-
-      <br />
-      <div className="placeComments">AQUI VAN LOS COMMENTS</div>
     </div>
   );
 }

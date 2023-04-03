@@ -45,16 +45,11 @@ export default function PlacesCard({ place }) {
           color="text.secondary"
         >
           {place.description}
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, quod
-          quaerat velit, sint amet nemo aspernatur asperiores dolorem
-          voluptatibus et dolorum explicabo neque quae in illo inventore quas
-          itaque minus.
         </MyDescription>
       </CardContent>
 
       <MyActions>
-        <MyButton underline="hover" variant="inherit">
+        <MyButton href={`/places/${place.id}`} underline="hover" variant="inherit">
           Ver comentarios
         </MyButton>
       </MyActions>
