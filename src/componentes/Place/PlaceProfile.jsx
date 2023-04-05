@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+// eslint-disable-next-line import/no-unresolved
+import { API_URL } from "utils/const";
 import "./PlaceProfileStyle.css";
 
 export default function PlaceProfile({ place }) {
@@ -6,7 +8,10 @@ export default function PlaceProfile({ place }) {
     <div className="place">
       <div className="encabezado">
         <div className="placeImage">
-          <img src={place.image} alt="imagen del lugar" />
+          <img
+            src={`${API_URL}${place.image}`}
+            alt={`imagen de ${place.name}`}
+          />
         </div>
 
         <div className="placeInfo">
@@ -16,8 +21,6 @@ export default function PlaceProfile({ place }) {
             <br />
             {place.address_city}, {place.address_state} -{place.address_zipcode}
           </h4>
-          <button type="button">Editar Lugar</button>
-          <button type="button" >Eliminar Lugar</button>
         </div>
       </div>
 

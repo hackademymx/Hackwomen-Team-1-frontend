@@ -1,17 +1,19 @@
 /* eslint-disable import/no-unresolved */
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Typography } from "@mui/material";
-import Notification from "componentes/Notification/Notification";
 import { getPlace, getComments } from "api/places";
-import { useParams } from "react-router-dom";
+import Notification from "componentes/Notification/Notification";
 import { DivTitle } from "componentes/Places/PlacesStyles";
 import PlaceProfile from "./PlaceProfile";
+import PlaceButtons from "./PlaceButtons";
 import Comment from "./Comment";
 
 function Place() {
   const { id } = useParams();
   const [place, setPlace] = useState([]);
   const [comments, setComments] = useState([]);
+
   const [notification, setNotification] = useState({
     open: false,
     message: "",
@@ -48,21 +50,6 @@ function Place() {
       setComments(data);
     };
 
-    /* const callDeletePlace = async (idPlace) =>{
-      const [data, status] = await deletePlace(idPlace);
-
-      if (status !== 200) {
-        setNotification({
-          open: true,
-          message: "Error al borrar el lugar",
-          severity: "warning",
-        });
-        return;
-      }
-
-      console.log(data)
-    } */
-
     callGetPlace(id);
     callGetComments(id);
   }, [id]);
@@ -74,6 +61,9 @@ function Place() {
       </DivTitle>
 
       <PlaceProfile place={place} />
+
+      <PlaceButtons place={place} />
+
       <Typography
         sx={{ width: "80%", margin: "auto" }}
         variant="h4"
@@ -85,6 +75,7 @@ function Place() {
       {comments.map((comment) => (
         <Comment comment={comment} key={comment.id} />
       ))}
+
       {notification.open && (
         <Notification
           notification={notification}

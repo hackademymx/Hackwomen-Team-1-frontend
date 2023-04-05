@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+// eslint-disable-next-line import/no-unresolved
+import { API_URL } from "utils/const";
 import { CardContent, Divider } from "@mui/material";
 import {
   MyActions,
@@ -18,8 +20,8 @@ export default function PlacesCard({ place }) {
           name="imagenLugar"
           component="img"
           height="200"
-          image={place.image}
-          alt="imagen del lugar"
+          image={`${API_URL}${place.image}`}
+          alt={`imagen de ${place.name}`}
         />
 
         <MyName name="nombreLugar" gutterBottom variant="h6" component="div">
@@ -49,7 +51,11 @@ export default function PlacesCard({ place }) {
       </CardContent>
 
       <MyActions>
-        <MyButton href={`/places/${place.id}`} underline="hover" variant="inherit">
+        <MyButton
+          href={`/places/${place.id}`}
+          underline="hover"
+          variant="inherit"
+        >
           Ver comentarios
         </MyButton>
       </MyActions>

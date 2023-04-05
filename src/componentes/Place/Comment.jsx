@@ -11,45 +11,45 @@ import {
 
 export default function Comment({ comment }) {
   return (
-      <List
-        sx={{
-          width: "80%",
-          bgcolor: "background.paper",
-          margin: "auto",
-        }}
-      >
-        <ListItem alignItems="flex-start">
-          <ListItemAvatar>
-            <Avatar alt="Imagen del usuario" src={comment.avatar} />
-          </ListItemAvatar>
-          <ListItemText
-            primary={
-              <>
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="subtitle"
-                  color="text.primary"
-                >
-                  {comment.username} -
-                </Typography>
+    <List
+      sx={{
+        width: "80%",
+        bgcolor: "background.paper",
+        margin: "auto",
+      }}
+    >
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Imagen del usuario" src={comment.avatar} />
+        </ListItemAvatar>
+        <ListItemText
+          primary={
+            <>
+              <Typography
+                sx={{ display: "inline" }}
+                component="span"
+                variant="subtitle"
+                color="text.primary"
+              >
+                {comment.username} -
+              </Typography>
 
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="span"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  {" "}
-                  {comment.createdAt}
-                </Typography>
-              </>
-            }
-            secondary={comment.comment}
-          />
-        </ListItem>
-        <Divider variant="inset" component="li" />
-      </List>
+              <Typography
+                sx={{ display: "inline" }}
+                component="span"
+                variant="body2"
+                color="text.primary"
+              >
+                {" "}
+                {comment.createdAt}
+              </Typography>
+            </>
+          }
+          secondary={comment.comment}
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+    </List>
   );
 }
 
