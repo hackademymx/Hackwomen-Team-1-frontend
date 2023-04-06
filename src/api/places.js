@@ -26,8 +26,11 @@ export const getPlace = async (id) => {
 
 export const addPlace = async (place) => {
   try {
+    const config = {     
+      headers: { 'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>' }
+    }
     const url = `${API_URL}/apps.places/`;
-    const { data, status } = await axios.post(url, JSON.stringify(place));
+    const { data, status } = await axios.post(url, place, config);
     return { data, status };
   } catch (error) {
     const { data, status } = error.response;
