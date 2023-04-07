@@ -29,11 +29,6 @@ h2, h4{
   gap: 10px;
 }
 
-button{
-  border: 0;
-  text-decoration: underline;
-}
-
 .encabezado{
   display: flex;
   flex-direction: row-reverse;

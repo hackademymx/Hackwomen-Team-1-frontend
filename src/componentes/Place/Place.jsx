@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Typography } from "@mui/material";
+import { Typography, Link } from "@mui/material";
 import { getPlace, getComments } from "api/places";
 import Notification from "componentes/Notification/Notification";
 import { DivTitle } from "componentes/Places/PlacesStyles";
@@ -57,7 +57,9 @@ function Place() {
   return (
     <div>
       <DivTitle gutterBottom variant="h2" component="div">
-        Lugares Seguros
+        <Link href="/places" color="whitesmoke" underline="none">
+          Lugares Seguros
+        </Link>
       </DivTitle>
 
       <PlaceProfile place={place} />
