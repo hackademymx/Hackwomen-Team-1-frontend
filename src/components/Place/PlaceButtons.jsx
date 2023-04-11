@@ -1,8 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { deletePlace } from "api/places";
-import Notification from "componentes/Notification/Notification";
+import { deletePlace } from "API/places";
+import Notification from "components/Notification/Notification";
 import { useNavigate } from "react-router-dom";
 import { Button, Stack, Divider } from "@mui/material";
 

@@ -2,9 +2,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Typography, Link } from "@mui/material";
-import { getPlace, getComments } from "api/places";
-import Notification from "componentes/Notification/Notification";
-import { DivTitle } from "componentes/Places/PlacesStyles";
+import { getPlace, getComments } from "API/places";
+import Notification from "components/Notification/Notification";
 import PlaceProfile from "./PlaceProfile";
 import PlaceButtons from "./PlaceButtons";
 import Comment from "./Comment";
@@ -56,11 +55,18 @@ function Place() {
 
   return (
     <div>
-      <DivTitle gutterBottom variant="h2" component="div">
+      <Typography 
+      sx={{
+        color: "whitesmoke",
+        margin: "0 auto",
+        padding: "20px",
+        backgroundColor: "#735d78",
+      }}
+      gutterBottom variant="h2" component="div">
         <Link href="/places" color="whitesmoke" underline="none">
           Lugares Seguros
         </Link>
-      </DivTitle>
+      </Typography>
 
       <PlaceProfile place={place} />
 

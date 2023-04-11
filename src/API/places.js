@@ -2,38 +2,10 @@
 import { API_URL } from "utils/const";
 import axios from "axios";
 
-export const getPlaces = async () => {
-  try {
-    const url = `${API_URL}/apps.places/`;
-    const { data, status } = await axios.get(url);
-    return [data, status];
-  } catch (error) {
-    const { data, status } = error.response;
-    return [data, status];
-  }
-};
-
 export const getPlace = async (id) => {
   try {
-    const url = `${API_URL}/apps.places/${id}/`;
+    const url = `${API_URL}${id}/`;
     const { data, status } = await axios.get(url);
-    return { data, status };
-  } catch (error) {
-    const { data, status } = error.response;
-    return { data, status };
-  }
-};
-
-export const addPlace = async (place) => {
-  try {
-    const config = {
-      headers: {
-        "Content-Type":
-          "multipart/form-data; boundary=<calculated when request is sent>",
-      },
-    };
-    const url = `${API_URL}/apps.places/`;
-    const { data, status } = await axios.post(url, place, config);
     return { data, status };
   } catch (error) {
     const { data, status } = error.response;

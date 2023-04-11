@@ -4,12 +4,15 @@ import { API_URL } from "utils/const";
 import "./PlaceProfileStyle.css";
 
 export default function PlaceProfile({ place }) {
+  const url = API_URL
+  const imgUrl= url.replace("apps.places/", "");
+  
   return (
     <div className="place">
       <div className="encabezado">
         <div className="placeImage">
           <img
-            src={`${API_URL}${place.image}`}
+            src={`${imgUrl}${place.image}`}
             alt={`imagen de ${place.name}`}
           />
         </div>
